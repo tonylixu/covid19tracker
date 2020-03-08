@@ -12,8 +12,8 @@ def get_us_data(_us_data_number) -> str:
     _ca_recovered = _us_data_number[4]
     _ca_deaths = _us_data_number[5]
     _msg = (
-        f"US Confirmed: {_us_confirmed}, Recovered: {_us_recovered}, Deaths: {_us_deaths}\n"
-        f"CA Confirmed: {_ca_confirmed}, Recovered: {_ca_recovered}, Deaths: {_ca_deaths}"
+        f"US Confirmed: `{_us_confirmed}`, Recovered: `{_us_recovered}, Deaths: `{_us_deaths}`\n"
+        f"CA Confirmed: `{_ca_confirmed}`, Recovered: `{_ca_recovered}`, Deaths: {_ca_deaths}"
         f"\n======\n"
     )
     return _msg
@@ -29,7 +29,7 @@ def get_new_york_data(_us_detailed_data):
             new_cases = _us_detailed_data[i + 2]
             deaths = _us_detailed_data[i + 3]
             _msg = (
-                f'{location}, Confirmed: {confirmed}, NewCases: {new_cases}, Deaths: {deaths}'
+                f'{location}, Confirmed: `{confirmed}`, NewCases: `{new_cases}`, Deaths: `{deaths}`'
             )
             break
     return _msg
@@ -57,7 +57,7 @@ if __name__ == '__main__':
     # Location, Confirmed, Recovered, Deaths
     us_detailed_data = us_detailed_data[4:]
 
-    msg_to_slack = f"`COVID-19 Hourly Update` \n"
+    msg_to_slack = f"`*COVID-19 Hourly Update*` \n"
     msg_to_slack += get_us_data(us_data_number)
     msg_to_slack += get_new_york_data(us_detailed_data)
     print(msg_to_slack)
