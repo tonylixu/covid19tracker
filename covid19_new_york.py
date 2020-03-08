@@ -28,7 +28,7 @@ for i in range(len(us_data)):
 
 client = slack.WebClient(token=os.environ['SLACK_API_TOKEN'])
 
-response = client.files_upload(
+response = client.chat_postMessage(
     channels='#notification',
     text=msg_to_slack )
 assert response["ok"]
