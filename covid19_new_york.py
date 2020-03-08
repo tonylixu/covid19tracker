@@ -57,7 +57,7 @@ if __name__ == '__main__':
     # Location, Confirmed, Recovered, Deaths
     us_detailed_data = us_detailed_data[4:]
 
-    msg_to_slack = f"* === COVID-19 Hourly Update === *\n"
+    msg_to_slack = f"`COVID-19 Hourly Update` \n"
     msg_to_slack += get_us_data(us_data_number)
     msg_to_slack += get_new_york_data(us_detailed_data)
     print(msg_to_slack)
