@@ -23,7 +23,10 @@ for i in range(len(us_data)):
         confirmed = us_data[i+1]
         recovered = us_data[i+2]
         deaths = us_data[i+3]
-        msg_to_slack = f'{location}, Confirmed: {confirmed}, Recovered:{recovered}, Deaths: {deaths}'
+        msg_to_slack = (
+            f'COVID-19 New York Hourly Update'
+            f'{location}, Confirmed: {confirmed}, Recovered:{recovered}, Deaths: {deaths}'
+        )
         break
 
 client = slack.WebClient(token=os.environ['SLACK_API_TOKEN'])
