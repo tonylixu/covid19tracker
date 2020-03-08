@@ -33,5 +33,6 @@ client = slack.WebClient(token=os.environ['SLACK_API_TOKEN'])
 
 response = client.chat_postMessage(
     channel='#notifications',
+    color='danger',
     text=msg_to_slack )
 assert response["ok"]
