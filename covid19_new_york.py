@@ -13,7 +13,7 @@ def get_us_data(_us_data_number) -> str:
     _ca_deaths = _us_data_number[5]
     _msg = (
         f"US Confirmed: `{_us_confirmed}`, Recovered: `{_us_recovered}, Deaths: `{_us_deaths}`\n"
-        f"CA Confirmed: `{_ca_confirmed}`, Recovered: `{_ca_recovered}`, Deaths: {_ca_deaths}"
+        f"CA Confirmed: `{_ca_confirmed}`, Recovered: `{_ca_recovered}`, Deaths: `{_ca_deaths}`"
         f"\n======\n"
     )
     return _msg
@@ -29,6 +29,7 @@ def get_new_york_data(_us_detailed_data):
             new_cases = _us_detailed_data[i + 2]
             deaths = _us_detailed_data[i + 3]
             _msg = (
+                f"*City* \n"
                 f'{location}, Confirmed: `{confirmed}`, NewCases: `{new_cases}`, Deaths: `{deaths}`'
             )
             break
