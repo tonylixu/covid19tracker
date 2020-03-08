@@ -25,7 +25,7 @@ for i in range(len(us_data)):
         deaths = us_data[i+3]
         msg_to_slack = (
             f"COVID-19 New York Hourly Update\n"
-            f'{location}, Confirmed: {confirmed}, Recovered:{recovered}, Deaths: {deaths}'
+            f'{location}, Confirmed: {confirmed}, Recovered: {recovered}, Deaths: {deaths}'
         )
         break
 
