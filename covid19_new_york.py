@@ -29,8 +29,8 @@ def get_new_york_data(_us_detailed_data):
             new_cases = _us_detailed_data[i + 2]
             deaths = _us_detailed_data[i + 3]
             _msg = (
-                f"*City* \n"
-                f'{location}, Confirmed: `{confirmed}`, NewCases: `{new_cases}`, Deaths: `{deaths}`'
+                f"*City:* \n"
+                f'{location}: Confirmed: `{confirmed}`, NewCases: `{new_cases}`, Deaths: `{deaths}`'
             )
             break
     return _msg
