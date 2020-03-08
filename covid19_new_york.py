@@ -29,6 +29,6 @@ for i in range(len(us_data)):
 client = slack.WebClient(token=os.environ['SLACK_API_TOKEN'])
 
 response = client.chat_postMessage(
-    channel='#notification',
+    channel='#notifications',
     text=msg_to_slack )
 assert response["ok"]
