@@ -2,7 +2,7 @@ from lxml import html
 import os
 import requests
 import slack
-
+from datetime import datetime
 
 def get_us_data(_us_data_number) -> str:
     _us_confirmed = _us_data_number[0]
@@ -44,6 +44,8 @@ def send_msg_to_slack(_msg: str):
 
 
 if __name__ == '__main__':
+    now = datetime.now()
+    dt_string = now.strftime("%Y-%m-%d %H:%M:%S")
     url = f'https://coronavirus.1point3acres.com/en'
     page = requests.get(url)
     tree = html.fromstring(page.content)
@@ -57,7 +59,7 @@ if __name__ == '__main__':
     # Location, Confirmed, Recovered, Deaths
     us_detailed_data = us_detailed_data[4:]
 
-    msg_to_slack = f"`*COVID-19 Hourly Update*` \n"
+    msg_to_slack = f"`*COVID-19 Hourly Update {dt_string}*` \n"
     msg_to_slack += get_us_data(us_data_number)
     msg_to_slack += get_new_york_data(us_detailed_data)
     print(msg_to_slack)
