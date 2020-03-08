@@ -61,4 +61,4 @@ if __name__ == '__main__':
     msg_to_slack += get_us_data(us_data_number)
     msg_to_slack += get_new_york_data(us_detailed_data)
     print(msg_to_slack)
-    #send_msg_to_slack(msg_to_slack)
+    send_msg_to_slack(msg_to_slack)
