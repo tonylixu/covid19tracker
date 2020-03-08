@@ -9,7 +9,7 @@ page = requests.get(url)
 tree = html.fromstring(page.content)
 
 # Convert full data into list
-us_data = tree.xpath('//span[@class="jsx-2915694336"]/text()')
+us_data = tree.xpath('//span[@class="jsx-153966605"]/text()')
 # Skip the first four lines:
 # Location, Confirmed, Recovered, Deaths
 us_data = us_data[4:]
@@ -21,12 +21,13 @@ for i in range(len(us_data)):
     if us_data[i].encode('unicode-escape') == b'\\u7ebd\\u7ea6':
         location = 'New York'
         confirmed = us_data[i+1]
-        recovered = us_data[i+2]
+        new_cases = us_data[i+2]
         deaths = us_data[i+3]
         msg_to_slack = (
             f"COVID-19 New York Hourly Update\n"
-            f'{location}, Confirmed: {confirmed}, Recovered: {recovered}, Deaths: {deaths}'
+            f'{location}, Confirmed: {confirmed}, NewCases: {new_cases}, Deaths: {deaths}'
         )
+        print(msg_to_slack)
         break
 
 client = slack.WebClient(token=os.environ['SLACK_API_TOKEN'])
