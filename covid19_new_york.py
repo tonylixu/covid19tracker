@@ -12,7 +12,7 @@ def get_us_data(_us_data_number) -> str:
     _ca_recovered = _us_data_number[4]
     _ca_deaths = _us_data_number[5]
     _msg = (
-        f"US Confirmed: `{_us_confirmed}`, Recovered: `{_us_recovered}, Deaths: `{_us_deaths}`\n"
+        f"US Confirmed: `{_us_confirmed}`, Recovered: `{_us_recovered}`, Deaths: `{_us_deaths}`\n"
         f"CA Confirmed: `{_ca_confirmed}`, Recovered: `{_ca_recovered}`, Deaths: `{_ca_deaths}`"
         f"\n======\n"
     )
