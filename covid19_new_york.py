@@ -21,7 +21,7 @@ def get_us_data(_us_data_number) -> str:
 
 def get_new_york_data(_us_detailed_data):
     # Define New York Unicode String
-    new_york_code = b'\\u7ebd\\u7ea6'
+    new_york_code = b'\\u7ebd\\u7ea6\\u5dde'
     for i in range(len(_us_detailed_data)):
         if _us_detailed_data[i].encode('unicode-escape') == new_york_code:
             location = 'New York'
