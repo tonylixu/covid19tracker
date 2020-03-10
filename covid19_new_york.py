@@ -52,8 +52,7 @@ if __name__ == '__main__':
     tree = html.fromstring(page.content)
 
     # Convert full data into list
-    us_data_title = tree.xpath('//dt[@class="jsx-4193741142"]/text()')
-    us_data_number = tree.xpath('//dd[@class="jsx-4193741142"]/text()')
+    us_data_number = tree.xpath('//strong[@class="jsx-889234990"]/text()')
     us_detailed_data = tree.xpath('//span[@class="jsx-153966605"]/text()')
 
     # Skip the first four lines:
